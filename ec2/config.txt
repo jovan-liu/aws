@@ -1,0 +1,65 @@
+1. setup linux server:
+
+sudo passwd root
+su root
+vi /etc/ssh/sshd_config
+	PasswordAuthentication no -> yes
+	PermitRootLogin yes
+sudo /sbin/service sshd restart
+
+passwd centos
+
+2. setup jdk
+rpm -ivh 
+vi /etc/profile
+	export JAVA_HOME=/usr/java/jdk1.8.0_171-amd64
+	export CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+	export PATH=$JAVA_HOME/bin:$PATH
+source /etc/profile	
+echo $PATH
+java -version
+
+3. setup mysql
+yum -y install wget
+wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+yum install mysql-server
+systemctl start mysqld #启动MySQL
+grep 'temporary password' /var/log/mysqld.log
+
+alter user 'root'@'localhost' identified by 'Core@123';
+grant all privileges on *.* to 'root'@'%' identified by 'Core@123' with grant option;
+create database svakom_manage default character set utf8 collate utf8_general_ci;
+
+
+4. setup tomcat
+tar -zxvf apache-tomcat-8.5.31.tar.gz
+
+5. ssl
+buy a domain
+dns
+yum install git
+git clone https://github.com/letsencrypt/letsencrypt
+cd letsencrypt
+./letsencrypt-auto certonly --standalone --email 348176170@qq.com -d jovanapi.top -d www.jovanapi.top
+	/etc/letsencrypt/live/jovanapi.top
+		cert.pem
+		chain.pem
+		fullchain.pem
+		privkey.pem
+openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
+keytool -importkeystore -deststorepass 'zxxx_123' -destkeypass 'zxxx_123' -destkeystore zyxx_letsencrypt.jks -srckeystore zyxx_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'zxxx_123' -alias tomcat_letsencrypt
+
+
+# 导出.p12格式的证书
+$ openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
+
+# 再将证书由.p12格式转换成.jks格式
+$ keytool -importkeystore -deststorepass 'zxxx_123' -destkeypass 'zxxx_123' -destkeystore zyxx_letsencrypt.jks -srckeystore zyxx_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'zxxx_123' -alias tomcat_letsencrypt
+
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol" SSLEnabled="true"
+	maxThreads="150" scheme="https" secure="true"
+	clientAuth="false" sslProtocol="TLS"
+	keystoreFile="/usr/local/tomcat/letsencrypt/zyxx_letsencrypt.jks"
+	keystorePass="zxxx_123"
+/>
