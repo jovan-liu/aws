@@ -47,19 +47,16 @@ cd letsencrypt
 		chain.pem
 		fullchain.pem
 		privkey.pem
-openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
-keytool -importkeystore -deststorepass 'zxxx_123' -destkeypass 'zxxx_123' -destkeystore zyxx_letsencrypt.jks -srckeystore zyxx_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'zxxx_123' -alias tomcat_letsencrypt
-
-
 # 导出.p12格式的证书
-$ openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out zyxx_letsencrypt.p12 -name tomcat_letsencrypt
-
+openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out jovan_letsencrypt.p12 -name tomcat_letsencrypt
 # 再将证书由.p12格式转换成.jks格式
-$ keytool -importkeystore -deststorepass 'zxxx_123' -destkeypass 'zxxx_123' -destkeystore zyxx_letsencrypt.jks -srckeystore zyxx_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'zxxx_123' -alias tomcat_letsencrypt
+keytool -importkeystore -deststorepass 'core@123' -destkeypass 'core@123' -destkeystore jovan_letsencrypt.jks -srckeystore jovan_letsencrypt.p12 -srcstoretype PKCS12 -srcstorepass 'core@123' -alias tomcat_letsencrypt
+--WARNING : The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore jovan_letsencrypt.jks -destkeystore jovan_letsencrypt.jks -deststoretype pkcs12".
 
-<Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol" SSLEnabled="true"
+tomcat -> server.xml
+<Connector port="443" protocol="org.apache.coyote.http11.Http11Protocol" SSLEnabled="true"
 	maxThreads="150" scheme="https" secure="true"
 	clientAuth="false" sslProtocol="TLS"
-	keystoreFile="/usr/local/tomcat/letsencrypt/zyxx_letsencrypt.jks"
-	keystorePass="zxxx_123"
-/>
+	keystoreFile="/etc/letsencrypt/live/jovanapi.top/jovan_letsencrypt.jks"
+	keystorePass="core@123"
+	/>
