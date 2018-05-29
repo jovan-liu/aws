@@ -1,0 +1,11 @@
+AKIAJ2K4WMFMBJX45DRQ
+Y8LdD6iXqXbnM2TuNFsZATleR0EfjII4YZTYTYTK
+
+645864226050
+Administrator
+
+
+https://242175099053.signin.aws.amazon.com/console
+
+ps -ef |grep tomcat
+kill -9 PID
