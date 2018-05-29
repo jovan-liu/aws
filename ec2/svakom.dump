@@ -1,0 +1,190 @@
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
+--
+-- Host: localhost    Database: svakom_manage
+-- ------------------------------------------------------
+-- Server version	5.7.22
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `operate_log`
+--
+
+DROP TABLE IF EXISTS `operate_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `operate_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `worker` varchar(255) DEFAULT NULL,
+  `operate_log` varchar(5000) DEFAULT NULL,
+  `createtime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_createtime` (`createtime`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `operate_log`
+--
+
+LOCK TABLES `operate_log` WRITE;
+/*!40000 ALTER TABLE `operate_log` DISABLE KEYS */;
+INSERT INTO `operate_log` VALUES (1,'admin','admin登录','2018-05-21 17:55:24'),(2,'admin','admin登录','2018-05-21 10:18:18'),(3,'admin','新闻保存成功:SVAKOM Supporting Movember Movement by Participating in Events at USA & Australia','2018-05-21 10:21:32'),(4,'jovan','jovan登录','2018-05-21 10:45:57'),(5,'jovan','新闻保存成功:Sex After An Abortion','2018-05-21 10:46:39'),(6,'admin','admin登录','2018-05-21 18:53:07'),(7,'admin','新闻保存成功:The 4 Steps To Give Her Multiple Orgasms','2018-05-21 18:54:10'),(8,'admin','新闻更新:The 4 Steps To Give Her Multiple Orgasms','2018-05-21 18:56:30'),(9,'jovan','jovan登录','2018-05-21 11:16:12'),(10,'jovan','新闻更新:Sex After An Abortion','2018-05-21 11:16:25'),(11,'admin','admin登录','2018-05-21 19:17:18'),(12,'admin','新闻更新:SVAKOM Supporting Movember Movement by Participating in Events at USA & Australia','2018-05-21 19:17:47'),(13,'jovan','jovan登录','2018-05-22 02:05:59'),(14,'jovan','新闻保存成功:test','2018-05-22 02:08:51'),(15,'jovan','新闻更新:test2','2018-05-22 02:12:02'),(16,'jovan','删除新闻序号:4','2018-05-22 02:12:15'),(17,'admin','admin登录','2018-05-22 02:56:26'),(18,'admin','新闻更新:SVAKOM Supporting Movember Movement by Participating in Events at USA & Australia','2018-05-22 02:57:29'),(19,'admin','新闻更新:SVAKOM Supporting Movember Movement by Participating in Events at USA & Australia','2018-05-22 03:02:04'),(20,'admin','新闻更新:Sex After An Abortion','2018-05-22 03:02:59'),(21,'admin','admin登录','2018-05-22 11:28:08'),(22,'jovan','jovan登录','2018-05-22 11:28:38'),(23,'jovan','jovan登录','2018-05-22 12:31:56'),(24,'admin','admin登录','2018-05-22 04:49:27'),(25,'admin','商品保存成功:SVAKOM BONNIE Double Pleasure Vibrator','2018-05-22 04:50:54'),(26,'admin','商品保存成功:SVAKOM Daisy','2018-05-22 04:51:42'),(27,'admin','admin登录','2018-05-22 06:32:25'),(28,'admin','新闻更新:SVAKOM attended a Meet and Greet between brand manufacturers and Russian shops in Thailand','2018-05-22 06:33:46'),(29,'admin','新闻更新:SVAKOM at China International Adult Toys & Reproductive Health Exhibition 2015','2018-05-22 06:34:19'),(30,'admin','新闻更新:SVAKOM Won Two Prestigious Awards at EroFame 2015 held in Germany','2018-05-22 06:34:52'),(31,'admin','新闻保存成功:SVAKOM Stole the Show at the International Lingerie Expo 2016 at Las Vegas','2018-05-22 06:35:13'),(32,'admin','新闻保存成功:SVAKOM Introduces a Series of New Products in China Adult Care Expo 2016 at Shanghai','2018-05-22 06:35:35'),(33,'admin','新闻保存成功:SVAKOM Launches Range of Products by Joining Hands with Online Store in Ukraine','2018-05-22 06:35:57'),(34,'admin','新闻保存成功:SVAKOM, an International Brand of Sexual Stimulators, Is Attending EroFame 2016 at Hannover, Germany','2018-05-22 06:36:26'),(35,'admin','新闻保存成功:SVAKOM Debuts New Range of Vibrators at EroFame 2016','2018-05-22 06:36:48'),(36,'admin','新闻保存成功:SVAKOM Participates in Xbiz Show at Los Angeles and AVN Expo held at Las Vegas in January 2017','2018-05-22 06:37:06'),(37,'admin','新闻保存成功:SVAKOM Participates in Esteemed Thai Fest 2017 Held at Moscow, Russia','2018-05-22 06:37:24'),(38,'admin','新闻保存成功:SVAKOM Reports Success at China Adult Care Expo','2018-05-22 06:37:48'),(39,'admin','新闻保存成功:SVAKOM Returns From São Paulo\'s Initimi Expo','2018-05-22 06:38:22'),(40,'admin','新闻保存成功:SVAKOM Wins Luxury Toy Line of Year Award at Asia Adult Expo','2018-05-22 06:38:38'),(41,'admin','新闻保存成功:SVAKOM Attends \'Honoring the Emmys\' Gifting Event at Los Angeles','2018-05-22 06:38:59'),(42,'admin','新闻保存成功:SVAKOM Attends EroFame 2017 at Hannover, Germany','2018-05-22 06:39:15'),(43,'admin','新闻保存成功:SVAKOM Supporting Movember Movement by Participating in Events at USA & Australia','2018-05-22 06:39:55'),(44,'admin','新闻保存成功:Svakom Showcases Products at American Music Awards Celebrity Event','2018-05-22 06:41:08'),(45,'admin','新闻保存成功:SVAKOM Attended XBIZ Awards 2018','2018-05-22 06:41:25'),(46,'admin','新闻保存成功:SVAKOM Attended Thai Fest 2018 held at Israel, Eilat','2018-05-22 06:41:46'),(47,'admin','新闻保存成功:SVAKOM ENLISTS VERONICA VEGA AND JEREMY COPLEAND TO CELEBRATE THE 2018 OSCARS','2018-05-22 06:42:06'),(48,'admin','新闻保存成功:Svakom Attends \"Sas in the City\" in Sydney, Australia','2018-05-22 06:42:24'),(49,'admin','新闻保存成功:The 4 Steps To Give Her Multiple Orgasms','2018-05-22 06:42:41'),(50,'admin','新闻保存成功:Sex After An Abortion','2018-05-22 06:42:58'),(51,'admin','商品更新:SVAKOM Limited Edition Gift Box for Lovers','2018-05-22 06:49:19'),(52,'admin','商品更新:SVAKOM BONNIE Double Pleasure Vibrator','2018-05-22 06:50:13'),(53,'admin','商品保存成功:SVAKOM ANGEL Intelligent Warming Vibrator','2018-05-22 06:50:56'),(54,'admin','商品保存成功:SVAKOM ANYA Powerful Warming Vibrator','2018-05-22 06:51:38'),(55,'admin','商品保存成功:SVAKOM Presents Cookie & Candy','2018-05-22 06:52:10'),(56,'admin','商品保存成功:SVAKOM Daisy','2018-05-22 06:55:02'),(57,'admin','商品保存成功:SVAKOM Cici Flexible Head Vibrator','2018-05-22 07:03:54'),(58,'admin','商品保存成功:SVAKOM Coco Flexible Head Vibrator','2018-05-22 07:04:25'),(59,'admin','商品保存成功:SVAKOM Adonis Ultra Soft Vibrator','2018-05-22 07:04:57'),(60,'admin','商品保存成功:SVAKOM Alice G-spot Vibrator','2018-05-22 07:05:27'),(61,'admin','商品保存成功:SVAKOM Amy G-spot Vibrator','2018-05-22 07:09:12'),(62,'admin','商品保存成功:SVAKOM Barbara Ultra Soft Vibrator','2018-05-22 07:09:42'),(63,'admin','商品保存成功:SVAKOM Becky G-spot Vibrator','2018-05-22 07:10:11'),(64,'admin','商品保存成功:SVAKOM Bella Anal Plug','2018-05-22 07:10:44'),(65,'admin','商品保存成功:SVAKOM Bess Anal Plug','2018-05-22 07:11:10'),(66,'admin','商品保存成功:SVAKOM Betty Ultra Soft Vibrator','2018-05-22 07:11:42'),(67,'admin','商品保存成功:SVAKOM Cathy Ultra Soft Vibrator','2018-05-22 07:12:11'),(68,'admin','商品保存成功:SVAKOM Cherry Ultra Soft Vibrator','2018-05-22 07:12:53'),(69,'admin','商品保存成功:SVAKOM ELMER Remote Control Vibrating Bullet','2018-05-22 07:13:27'),(70,'admin','商品保存成功:SVAKOM Elva Remote Control Vibrating Bullet','2018-05-22 07:13:59'),(71,'admin','商品保存成功:SVAKOM EMMA Heating Wand Vibrator','2018-05-22 07:15:34'),(72,'admin','商品保存成功:SVAKOM Hedy Male Masturbator with AQUAglide','2018-05-22 07:15:58'),(73,'admin','商品保存成功:Svakom Judy Powerful Anal Plug','2018-05-22 07:16:30'),(74,'admin','商品保存成功:Svakom julie Powerful Anal Plug with Remote Control','2018-05-22 07:16:59'),(75,'admin','商品保存成功:SVAKOM Keri Clitoral Stimulator','2018-05-22 07:17:26'),(76,'admin','商品保存成功:SVAKOM Leo Long Lasting Vibrator','2018-05-22 07:17:54'),(77,'admin','商品保存成功:SVAKOM Leslie Heating Vibrator','2018-05-22 07:18:21'),(78,'admin','商品保存成功:SVAKOM Lester Heating Vibrator','2018-05-22 07:18:47'),(79,'admin','商品保存成功:SVAKOM Lisa Touch Sensor Vibrator','2018-05-22 07:19:19'),(80,'admin','商品保存成功:SVAKOM Lorna Touch Sensor Vibrator','2018-05-22 07:19:55'),(81,'admin','商品保存成功:SVAKOM Lucas Long Lasting Vibrator','2018-05-22 07:21:53'),(82,'admin','商品保存成功:SVAKOM Mini Emma Ultra Soft Vibrator','2018-05-22 07:25:29'),(83,'admin','商品保存成功:SVAKOM Nova Exercise Ball','2018-05-22 07:26:04'),(84,'admin','商品保存成功:SVAKOM Primo Warming Plug Vibrator','2018-05-22 07:26:32'),(85,'admin','商品保存成功:SVAKOM Rebecca Clitoral Stimulator','2018-05-22 07:27:08'),(86,'jovan','jovan登录','2018-05-22 07:51:16'),(87,'admin','admin登录','2018-05-22 07:54:15'),(88,'jovan','jovan登录','2018-05-22 08:03:11'),(89,'jovan','jovan登录','2018-05-22 08:23:26'),(90,'jovan','jovan登录','2018-05-22 16:47:16'),(91,'jovan','jovan登录','2018-05-22 09:02:11'),(92,'jovan','商品更新:SVAKOM Limited Edition Gift Box for Lovers','2018-05-22 09:04:00'),(93,'jovan','商品更新:SVAKOM BONNIE Double Pleasure Vibrator','2018-05-22 09:04:16'),(94,'jovan','商品更新:SVAKOM ANGEL Intelligent Warming Vibrator','2018-05-22 09:04:26'),(95,'jovan','商品更新:SVAKOM ANYA Powerful Warming Vibrator','2018-05-22 09:04:35'),(96,'jovan','商品更新:SVAKOM Presents Cookie & Candy','2018-05-22 09:04:46'),(97,'jovan','商品更新:SVAKOM Daisy','2018-05-22 09:05:19'),(98,'jovan','商品更新:SVAKOM Cici Flexible Head Vibrator','2018-05-22 09:05:30'),(99,'jovan','商品更新:SVAKOM Coco Flexible Head Vibrator','2018-05-22 09:05:41'),(100,'jovan','商品更新:SVAKOM Adonis Ultra Soft Vibrator','2018-05-22 09:06:42'),(101,'jovan','商品更新:SVAKOM Alice G-spot Vibrator','2018-05-22 09:06:53'),(102,'jovan','商品更新:SVAKOM Amy G-spot Vibrator','2018-05-22 09:07:06'),(103,'jovan','商品更新:SVAKOM Barbara Ultra Soft Vibrator','2018-05-22 09:07:19'),(104,'jovan','商品更新:SVAKOM Becky G-spot Vibrator','2018-05-22 09:07:29'),(105,'jovan','商品更新:SVAKOM Bella Anal Plug','2018-05-22 09:07:39'),(106,'jovan','商品更新:SVAKOM Bess Anal Plug','2018-05-22 09:07:50'),(107,'jovan','商品更新:SVAKOM Betty Ultra Soft Vibrator','2018-05-22 09:08:04'),(108,'jovan','商品更新:SVAKOM Cathy Ultra Soft Vibrator','2018-05-22 09:08:15'),(109,'jovan','商品更新:SVAKOM Cherry Ultra Soft Vibrator','2018-05-22 09:08:26'),(110,'jovan','商品更新:SVAKOM ELMER Remote Control Vibrating Bullet','2018-05-22 09:08:37'),(111,'jovan','商品更新:SVAKOM Elva Remote Control Vibrating Bullet','2018-05-22 09:08:49'),(112,'jovan','商品更新:SVAKOM EMMA Heating Wand Vibrator','2018-05-22 09:09:06'),(113,'jovan','商品更新:SVAKOM Hedy Male Masturbator with AQUAglide','2018-05-22 09:09:16'),(114,'jovan','商品更新:Svakom Judy Powerful Anal Plug','2018-05-22 09:09:27'),(115,'jovan','商品更新:Svakom julie Powerful Anal Plug with Remote Control','2018-05-22 09:09:41'),(116,'jovan','商品更新:SVAKOM Keri Clitoral Stimulator','2018-05-22 09:09:56'),(117,'jovan','商品更新:SVAKOM Leo Long Lasting Vibrator','2018-05-22 09:10:11'),(118,'jovan','商品更新:SVAKOM Leslie Heating Vibrator','2018-05-22 09:10:21'),(119,'jovan','商品更新:SVAKOM Leslie Heating Vibrator','2018-05-22 09:10:21'),(120,'jovan','商品更新:SVAKOM Lester Heating Vibrator','2018-05-22 09:10:34'),(121,'jovan','商品更新:SVAKOM Lisa Touch Sensor Vibrator','2018-05-22 09:10:45'),(122,'jovan','商品更新:SVAKOM Lorna Touch Sensor Vibrator','2018-05-22 09:10:57'),(123,'jovan','商品更新:SVAKOM Lucas Long Lasting Vibrator','2018-05-22 09:11:08'),(124,'jovan','商品更新:SVAKOM Mini Emma Ultra Soft Vibrator','2018-05-22 09:11:17'),(125,'jovan','商品更新:SVAKOM Nova Exercise Ball','2018-05-22 09:11:28'),(126,'jovan','商品更新:SVAKOM Primo Warming Plug Vibrator','2018-05-22 09:11:38'),(127,'jovan','商品更新:SVAKOM Rebecca Clitoral Stimulator','2018-05-22 09:11:48'),(128,'jovan','商品保存成功:SVAKOM Siime Camera Vibrator','2018-05-22 09:13:54'),(129,'jovan','商品保存成功:SVAKOM Trysta Targeted Rolling G-spot Vibrator','2018-05-22 09:14:33'),(130,'jovan','商品保存成功:SVAKOM Tyler Vibrator For Couples','2018-05-22 09:15:12'),(131,'jovan','商品保存成功:SVAKOM Vesper Strong Dual Motor Warming Vibrator','2018-05-22 09:15:57'),(132,'jovan','商品保存成功:SVAKOM Wendy Vibrating Ring','2018-05-22 09:16:43'),(133,'jovan','商品保存成功:SVAKOM Winni Remote Control Vibrating Ring','2018-05-22 09:18:28'),(134,'jovan','商品保存成功:Charging Cable 1','2018-05-22 09:19:00'),(135,'jovan','商品保存成功:Charging Cable 2','2018-05-22 09:19:33'),(136,'jovan','商品更新:Charging Cable 1','2018-05-22 09:20:15'),(137,'jovan','商品保存成功:Charging Cable 2','2018-05-22 09:21:07'),(138,'jovan','商品保存成功:Charging Cable 3','2018-05-22 09:21:34'),(139,'jovan','商品保存成功:Charging Cable 4','2018-05-22 09:22:07');
+/*!40000 ALTER TABLE `operate_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `permissions`
+--
+
+DROP TABLE IF EXISTS `permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `permission` varchar(45) NOT NULL COMMENT '权限Action',
+  `description` varchar(255) DEFAULT NULL COMMENT '描述',
+  `impower` int(1) DEFAULT NULL,
+  `rtxnumber` varchar(20) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permissions`
+--
+
+LOCK TABLES `permissions` WRITE;
+/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
+INSERT INTO `permissions` VALUES (1,'account-list','用户列表',NULL,NULL,'2018-05-21 09:28:31'),(2,'account-role-list','角色操作',NULL,NULL,'2018-05-21 09:28:34'),(3,'account-perm-list','权限操作',NULL,NULL,'2018-05-21 09:28:36'),(4,'operatelog-list','日志列表',NULL,NULL,'2018-05-21 09:28:38'),(5,'news-list','新闻列表',NULL,NULL,'2018-05-21 09:29:10'),(6,'item-list','商品列表',NULL,NULL,'2018-05-21 09:29:12');
+/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roleName` varchar(45) NOT NULL COMMENT '角色名称',
+  `description` varchar(255) DEFAULT NULL COMMENT '角色描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'admin','admin'),(2,'客服使用','客服使用');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles_permissions`
+--
+
+DROP TABLE IF EXISTS `roles_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles_permissions` (
+  `role_id` int(11) NOT NULL COMMENT '角色id',
+  `permission_id` int(11) NOT NULL COMMENT '权限id',
+  `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`role_id`,`permission_id`),
+  KEY `rolse_permissions_permissions_id_fk_idx` (`permission_id`) USING BTREE,
+  CONSTRAINT `roles_permissions_ibfk_1` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`),
+  CONSTRAINT `roles_permissions_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles_permissions`
+--
+
+LOCK TABLES `roles_permissions` WRITE;
+/*!40000 ALTER TABLE `roles_permissions` DISABLE KEYS */;
+INSERT INTO `roles_permissions` VALUES (1,1,'2018-05-21 09:28:43'),(1,2,'2018-05-21 09:28:45'),(1,3,'2018-05-21 09:28:47'),(1,4,'2018-05-21 09:28:49'),(1,5,'2018-05-21 09:29:21'),(1,6,'2018-05-21 09:29:24'),(2,4,'2018-05-21 09:40:26'),(2,5,'2018-05-21 09:40:30'),(2,6,'2018-05-21 09:40:32');
+/*!40000 ALTER TABLE `roles_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_roles`
+--
+
+DROP TABLE IF EXISTS `user_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_roles` (
+  `user_id` int(11) NOT NULL COMMENT '用户Id',
+  `role_id` int(11) NOT NULL COMMENT '角色id',
+  `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`user_id`,`role_id`),
+  UNIQUE KEY `user_roles_roles_id_fk_idx` (`role_id`,`user_id`) USING BTREE,
+  CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_roles`
+--
+
+LOCK TABLES `user_roles` WRITE;
+/*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
+INSERT INTO `user_roles` VALUES (1,1,'2018-05-21 09:38:24'),(2,2,'2018-05-21 09:38:27');
+/*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL COMMENT '用户名',
+  `password` varchar(255) NOT NULL COMMENT '密码',
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0未激活   1激活 ',
+  `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`,`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','p@ssw0rd#Sva!',1,'2018-05-21 09:38:04'),(2,'jovan','core@123',1,'2018-05-21 09:38:07');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-05-23  6:55:54

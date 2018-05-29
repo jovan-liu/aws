@@ -1,0 +1,5 @@
+restore:
+mysql -u root -p svakom_manage < D:\svakom-project\db\svakom.dump
+
+backup:
+mysqldump -u root -p svakom_manage > svakom.dump
